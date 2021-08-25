@@ -1,0 +1,27 @@
+---
+version: 2.1
+
+executors:
+  default:
+    docker:
+      - image: cimg/python:3.8.11-node
+
+jobs:
+  setup:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          command: .circleci/helper_scripts/install_asdf.sh
+      - run:
+          command: |
+            echo 'source ~/.asdf/asdf.sh' >> $BASH_ENV
+      - run:
+          command: |
+            echo "$PATH"
+            npm install
+
+workflows:
+  setup:
+    jobs:
+      - setup
