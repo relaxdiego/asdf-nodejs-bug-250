@@ -20,6 +20,6 @@ asdf install nodejs
 # Pull known bad commit
 cd ~/.asdf/plugins/nodejs
 git reset --hard
-git checkout 95a2091f7b64497c002dc709b267f5d03f302498
+git checkout 54113a909bcc7325eae6a1824e87d5e8cfe0a0c3
 
 asdf reshim
